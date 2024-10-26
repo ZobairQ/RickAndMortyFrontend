@@ -1,12 +1,12 @@
 import { Origin } from "./origin";
 
 export interface Character {
-  id: string;
-  name: string;
+  Id: string;
+  Name: string;
   image: string;
-  status: string;
-  species: string;
-  gender: string;
-  origin: Origin;
-  location: Location;
+  Status: string;
+  Species: string;
+  Gender: string;
+  Origin: Origin;
+  Location: Location;
 }
