@@ -6,7 +6,7 @@ interface CardProps {
 }
 
 const Card = ({ character }: CardProps) => {
-  const {Id, image, Name, Status} = character;
+  const {image, Name, Status} = character;
 
   return (
     <div className="card-container">
