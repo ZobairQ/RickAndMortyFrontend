@@ -4,6 +4,7 @@ import { Character } from "./interfaces/character";
 import SearchBox from "./components/searchBox/SearchBox";
 import CardList from "./components/cardList/CardList";
 
+const BASE_URL = process.env.REACT_APP_BASE_URL || "localhost:5001";
 function App() {
   const [searchField, setSearchField] = useState<string>("");
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -11,9 +12,10 @@ function App() {
     useState<Character[]>(characters);
 
   useEffect(() => {
+    console.log(process.env);
     async function fetchCharacters() {
       try {
-        let response = await fetch("http://localhost:5001/api/characters?page=1"); // Pagination should be added later on.
+        let response = await fetch(`http://${BASE_URL}/api/characters?page=1`); // Pagination should be added later on.
         let data = await response.json();
         console.log(data);
         setCharacters(data);

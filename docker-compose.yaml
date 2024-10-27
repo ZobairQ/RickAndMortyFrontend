@@ -1,0 +1,16 @@
+services:
+    frontend:
+        command: ["npm","start"]
+        networks:
+            - rick_and_morty
+        restart: always
+        container_name: frontend
+        build:
+            context: .
+            dockerfile: .Docker/dockerfile
+        ports:
+          - 3000:3000
+networks:
+    rick_and_morty:
+        name: rick_and_morty
+        external: true
